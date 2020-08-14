@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SHERA</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link rel="stylesheet" href="css/shera.css">
+
+	<script>
+		// move
+		/// end sidebar click
+		/* function togglesidebar() {
+			document.getElementById("mySidebar").classList.toggle('active');
+			//เปลี่ยน class แต่ไม่เปลี่ยนกลับ
+				document.getElementById("changeclass").className += "fa fa-chevron-right";} */
+
+		function togglesidebar() {
+			document.getElementById("mySidebar").classList.toggle('active');
+			const isActive = document.getElementById("mySidebar").classList.contains('active')
+			document.getElementById("changeclass").className = `fa fa-chevron-${isActive ? 'right' : 'left'}`;
+
+			document.getElementById("mySidebar").classList.toggle('close');
+		}
+
+		//document.getElementById("roundborder").style.borderRadius = "25px";
+		//document.getElementById("roundborder").style.border = "1px solid white";
+
+		function focuss() {
+			let element = document.getElementById("roundborder");
+			element.classList.toggle('border')
+
+		}
+
+
+
+		//change picture
+		function changeImage(a) {
+			document.getElementById("img").src = a;
+		}
+		//Clear Button
+		function defaultimg() {
+			document.getElementById("img").src = "pic/defaultu.png";
+			document.getElementsByClassName("downfl").src = "pic/defaultd.png";
+
+			let menuactive = document.getElementById("mySidebar").classList.toggle('active');
+			
+			var element = document.getElementById("myDIV");
+			element.classList.remove("mystyle");
+		}		
+	</script>
+
+</head>
+
+<body>
+	<div class="container">
+		<img src="Uhomew1200.png">
+		<button class="btn1" id="btn1" onclick="defaultimg()">Clear</button>
+	</div>
+
+	<div class="container">
+		<img id="img" src="pic/defaultu.png">
+
+		<img class="downfl" src="pic/defaultd.png">
+
+
+		<button class="btn2" id="btn2" onclick="togglesidebar();"></button>
+		<button class="btn3" id="btn3" onclick="togglesidebar();"></button>
+
+
+
+
+		<div id="mySidebar">
+			<button onclick="togglesidebar(); changeclass();" id="btn4">
+				<span id="changeclass" class="fa fa-chevron-left"></span></button>
+			<!-- <button id="btn4" onclick="togglesidebar()"> > </button> 
+			<span id="changeclass"	class="fa fa-chevron-left"></span>-->
+			<!-- <span class="fa fa-chevron-left"></span> -->
+			<!-- <button onclick="togglesidebar()"><span class="fa fa-chevron-right"></span></button> -->
+			<div class="langcat">CATALOG</div>
+			<hr class="hr">
+
+			<div>
+				<ul class="col1">
+					<div style="margin-left: 3px; font-family: shera;">
+						<a href="javascript:void(0)" class="textround" id="roundborder" onclick="focuss();">ไม้พื้น</a>
+						<span style="user-select: none; color: white;">|</span>
+
+						<a href="javascript:void(0)" class="textround" id="roundborder" onclick="focuss();">
+							ไม้ระแนง</a>
+
+						<div id="Upselect">
+							<div class="boximga">
+								<a><img src="pic/select/Up/1.png"
+										onclick='changeImage("pic/selectup/01UBeech.png");'></a>
+							</div>
+							<div class="boximga">
+								<a><img src="pic/select/Up/2.png"
+										onclick='changeImage("pic/selectup/02UModernGray.png");'></a>
+							</div>
+							<div class="boximga">
+								<a><img src="pic/select/Up/3.png" onclick='changeImage("pic/selectup/03UOak.png");'></a>
+							</div>
+							<div class="boximga">
+								<a><img src="pic/select/Up/4.png"
+										onclick='changeImage("pic/selectup/04URedOak.png");'></a>
+							</div>
+							<div class="boximga">
+								<a><img src="pic/select/Up/5.png"
+										onclick='changeImage("pic/selectup/05URedMahogany.png");'></a>
+							</div>
+						</div>
+
+
+						<!-- <div id="Dselect" style="display: none;">
+						<div class="boximga">
+							<a><img id="imgc" src="pic/downfl/1.png"
+									onclick='changeImage("pic/selectdown/F01Beech.png");'></a>
+						</div>
+						<div class="boximga">
+							<a class="2"><img src="pic/downfl/2.png"
+									onclick='changeImage("pic/selectup/F02ModernGray.png");'></a>
+						</div>
+						<div class="boximga">
+							<a class="3"><img src="pic/downfl/3.png"
+									onclick='changeImage("pic/selectup/F03GoldenSandTeak.png");'></a>
+						</div>
+						<div class="boximga">
+							<a class="4"><img src="pic/downfl/4.png"
+									onclick='changeImage("pic/selectup/F04TropicalOak.png");'></a>
+						</div>
+						<div class="boximga">
+							<a class="5"><img src="pic/downfl/5.png"
+									onclick='changeImage("pic/selectup/F05BrownWenge.png");'></a>
+						</div>
+					</div> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SHERA</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="//www.google-analytics.com/analytics.js"></script>
+
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			position: relative;
+			max-width: 1200px;
+			margin: 0 auto;
+			overflow-x: hidden;
+		}
+
+		.container img {
+			width: 100%;
+			height: auto;
+		}
+
+		.container .btn1 {
+			position: absolute;
+			top: 40%;
+			left: 80%;
+		}
+
+		.btn1 {
+			color: aliceblue;
+			background-color: rgb(70, 201, 77);
+		}
+
+		.btn1:hover {
+			background-color: rgba(117, 248, 124);
+		}
+
+		.container .btn1 {
+			border-radius: 20%;
+			border: none;
+			outline: none;
+			padding: 0.833333%;
+			/* 10/1200 */
+		}
+
+		.container .btn2:hover {
+			background-color: rgba(60, 245, 69, 0.801);
+			border: none;
+
+		}
+
+		.container .btn3:hover {
+			background-color: rgba(60, 245, 69, 0.801);
+			border: none;
+		}
+
+		.container #btn4:hover {
+			background-color: rgba(60, 245, 69, 0.801);
+			border: none;
+		}
+
+		.container .btn2 {
+			background-image: url("arrow.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 48%;
+			left: 35%;
+			border-radius: 100%;
+			padding: 1.666666666666667%;
+			border: none;
+			outline: none;
+		}
+
+		.container .btn3 {
+			background-image: url("arrow.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			top: 70%;
+			left: 35%;
+			border-radius: 100%;
+			padding: 1.666666666666667%;
+			border: none;
+			outline: none;
+
+		}
+
+		/* .container  {
+			position: absolute;
+			top: 72%;
+			right: 80%;
+			font-size: 20px;
+			border-radius: 100%;
+			width: 30px;
+			height: 30px;
+			border: none;
+			outline: none;
+			background-color: green;
+			z-index: 3;
+		} */
+		#btn4 {
+			position: absolute;
+			right: 95%;
+			font-size: 100%;
+			border-radius: 100%;
+			padding: 10px;
+			border: none;
+			outline: none;
+			background-color: green;
+			z-index: 3;
+		}
+
+		#mySidebar #btn4 {
+			top: 30%;
+		}
+
+		#mySidebar {
+			position: absolute;
+			top: 50%;
+			right: 6%;
+			/* width: 100px;
+			height: 200px; */
+			width: 200px;
+			/* 100/1200 */
+			/* 100/1200 */
+			height: auto;
+			opacity: 0.7;
+			background-color: green;
+		}
+
+		ul {
+			margin: 0;
+			margin-bottom: 5px;
+			list-style-type: none;
+			padding-right: 10px;
+			padding-inline-start: 10px;
+		}
+
+
+		/*#mySidebar .togglebtn span {
+			display: block;
+			font-size: 25px;
+			margin: 0 auto;
+		} */
+
+		#mySidebar.active {
+			right: 0px;
+			width: auto;
+			height: auto;
+			transition: all 0.5s linear;
+
+		}
+
+		.btn3.active {
+			right: 0px;
+			width: auto;
+			height: auto;
+			transition: all 0.5s linear;
+		}
+
+		#langcat {
+			font-family: Shera;
+			font-weight: bold;
+			text-align: center;
+			margin-top: 5px;
+			font-size: 18px;
+			color: white;
+			letter-spacing: 0.5px;
+		}
+
+		#fllang {
+			font-family: Shera;
+		}
+
+		#btn4:after span {
+			content: 'fa-chevron-left';
+		}
+
+		/* #btn4 span {
+			content: '<';
+		}
+
+		#btn4:focus:after,
+		#btn4:active:after {
+			content: '>';
+			display: block;
+		} */
+		.textround {
+			text-decoration: none;
+			display: inline-block;
+			border-radius: 25px;
+			width: 80px;
+			padding: 1px;
+			/* border: 1px solid white; */
+			text-align: center;
+		}
+		a{
+			color: white;
+		}
+		a:active {
+			border: 1px solid white;
+		}
+		.boximg{
+			margin-top: 5px;
+		}
+	</style>
+
+
+	<script>
+		// move
+		/// end sidebar click
+
+		/* function togglesidebar() {
+			document.getElementById("mySidebar").classList.toggle('active');
+			//เปลี่ยน class แต่ไม่เปลี่ยนกลับ
+				document.getElementById("changeclass").className += "fa fa-chevron-right";} */
+
+
+
+		function togglesidebar() {
+			document.getElementById("mySidebar").classList.toggle('active');
+			const isActive = document.getElementById("mySidebar").classList.contains('active')
+			document.getElementById("changeclass").className = `fa fa-chevron-${isActive ? 'right' : 'left'}`;
+		}
+
+
+
+
+		let vh = window.innerWidth * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log(vh);
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<img src="Uhomew1200.png">
+		<button class="btn1">Clear</button>
+	</div>
+
+	<div class="container">
+		<img src="Dhomew1200.png">
+		<button class="btn2"></button>
+		<button class="btn3"></button>
+		<!-- <button id="btn4" class="fa fa-chevron-left" onclick="togglesidebar()"></button> -->
+
+
+		<div id="mySidebar">
+			<button onclick="togglesidebar(); changeclass();" id="btn4" style="top: 42%;">
+				<span id="changeclass" class="fa fa-chevron-left"></span></button>
+			<!-- <button id="btn4" onclick="togglesidebar()"> > </button> 
+			<span id="changeclass"	class="fa fa-chevron-left"></span>-->
+			<!-- <span class="fa fa-chevron-left"></span> -->
+			<!-- <button onclick="togglesidebar()"><span class="fa fa-chevron-right"></span></button> -->
+			<div id="langcat">CATALOG</div>
+			<hr style="width: 130px; margin-top: 0; margin-left: auto; margin-right: auto; ">
+
+			<div>
+				<ul class="col1">
+					<div style="margin-left: 3px; font-family: shera;"><a href="#" class="textround"> ไม้พื้น </a>
+						<span style="margin-left: 1px; color: white;">|</span>
+						<a href="#" class="textround"> ไม้ระแนง </a></div>
+
+					<div class="boximg">
+					<div>
+						<a href="#" class="1"><img src="pic/downfl/1.png"></a>
+					</div>
+					<div>
+						<a href="#" class="2"><img src="pic/downfl/2.png"></a>
+					</div>
+					<div>
+						<a href="#" class="3"><img src="pic/downfl/3.png"></a>
+					</div>
+					<div>
+						<a href="#" class="4"><img src="pic/downfl/4.png"></a>
+					</div>
+					<div>
+						<a href="#" class="5"><img src="pic/downfl/5.png"></a>
+					</div></div>
+				</ul>
+			</div>
+
+
+
+
+
+			
+			<!-- <div><ul class="col2">
+				<div>ไม้ระแนง</div>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href="#">10</a></li>
+			</ul></div> -->
+		</div>
+	</div>
+
+
+	<div class="container">
+		<img class="downfl" src="">
+	</div>
+
+
+
+
+</body>
+
+</html>
